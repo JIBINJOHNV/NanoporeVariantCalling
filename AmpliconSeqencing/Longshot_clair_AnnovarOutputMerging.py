@@ -6,8 +6,7 @@ import sys
 
 parser=argparse.ArgumentParser(description="It is for generating Manhatton and qq plot from genesis software; eg Annovar_Output/Clair3/Filtered/barcode60_Clair3_filtered_Normalised_Target.hg38_multianno_DesiredColumns_Filtered.tsv\n")
 parser.add_argument('-ClairAnnovarFile','--ClairAnnovarFile', help="Files generated from the clair vcf annovar annotation ; eg: Annovar_Output/LongShoot/Filtered/barcode60_longshot_filtered_Normalised_Target.hg38_multianno_DesiredColumns_Filtered.tsv", required=True)
-
-parser.add_argument('-OutputFilename','--OutputFilename', help="Output file name", required=False)
+parser.add_argument('-LongshotAnnovarFile','--LongshotAnnovarFile', help="Files generated from the Longshot vcf annovar annotation ; eg barcode60", required=True)
 args=parser.parse_args()
 
 

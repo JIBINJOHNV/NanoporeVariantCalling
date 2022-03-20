@@ -1,12 +1,11 @@
 
-
 import pandas as pd
 import numpy as np
 import argparse
+import sys
 
 parser=argparse.ArgumentParser(description="It is for generating Manhatton and qq plot from genesis software; eg Annovar_Output/Clair3/Filtered/barcode60_Clair3_filtered_Normalised_Target.hg38_multianno_DesiredColumns_Filtered.tsv\n")
 parser.add_argument('-ClairAnnovarFile','--ClairAnnovarFile', help="Files generated from the clair vcf annovar annotation ; eg: Annovar_Output/LongShoot/Filtered/barcode60_longshot_filtered_Normalised_Target.hg38_multianno_DesiredColumns_Filtered.tsv", required=True)
-parser.add_argument('-LongshotAnnovarFile','--LongshotAnnovarFile', help="Files generated from the Longshot vcf annovar annotation ; eg barcode60_Normalised_Target.hg38_multianno_DesiredColumns_Filtered", required=True)
 
 parser.add_argument('-OutputFilename','--OutputFilename', help="Output file name", required=False)
 args=parser.parse_args()
@@ -14,6 +13,7 @@ args=parser.parse_args()
 
 clar=args.ClairAnnovarFile
 long=args.LongshotAnnovarFile
+
 outputname="_".join(clar.split("/")[-1].split("_")[2:])[:-4]
 
 
@@ -27,6 +27,8 @@ longdf=pd.read_csv(long,sep="\t")
 CSampleName=" ".join(pd.DataFrame(clairdf.iloc[:,-1]).columns)
 LSampleName=" ".join(pd.DataFrame(longdf.iloc[:,-1]).columns)
 
+if CSampleName!=LSampleName:
+    sys.exit()
 
 claircolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER','#CHROM','POS','ID', 'REF', 'ALT', 'INFO','FORMAT', CSampleName]
 longcolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER','#CHROM', 'POS', 'ID', 'REF', 'ALT', 'INFO','FORMAT', LSampleName]
@@ -113,5 +115,4 @@ Merged=Merged[['#Chr', 'Start', 'End', 'Ref', 'Alt', 'Gene.refGene', 'Func.refGe
        'GME_AF_popmax', 'GIV_Indian_AAF', 'GIV_Indian_HET', 'GIV_CDFD_AAF',
        'GIV_CDFD_HET', '#CHROM', 'POS', 'ID', 'REF', 'ALT', 'clair|long_INFO', 'clair|long_FORMAT', 'clair|long_'+CSampleName]]
 
-Merged.to_csv(outputname+'clair_long.csv',index=None)
-
+Merged.to_csv(LSampleName+"_"+outputname+'_clair_long.csv',index=None)

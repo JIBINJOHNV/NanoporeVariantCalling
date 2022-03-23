@@ -1,0 +1,50 @@
+Chromosome	Start	End	f_NAME	Library	barcode60	barcode61	barcode62	barcode63	barcode64	barcode65	barcode66
+chr22	50622586	50628314	ARSA	barcode65						S21	
+chr11	6389398	6395393	SMPD1	barcode63|barcode64|barcode65				S13	S14	S15	
+chr11	155234452	155244627	GBA	barcode63|barcode64|barcode65				S1	S2	S3	
+chrX	154991877	154999829	F8.1	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154983846	154991518	F8.2	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154960817	154969892	F8.3	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154946691	154960549	F8.4	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154927559	154932705	F8.5	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154898934	154907072	F8.6	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154859810	154863890	F8.7	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154835707	154838515	F8.8	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	154895816	154896655	F8.22Seq	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chrX	155022349	155022898	F8.1Seq	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	V1	V2	V3	V4	V5	V6	V7
+chr16	88852253	88857259	GALNS.1	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	S4	S5	S10	S6	S7	S8	S9
+chr16	88839040	88844394	GALNS.2	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	S4	S5	S10	S6	S7	S8	S9
+chr16	88831070	88838380	GALNS.3	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	S4	S5	S10	S6	S7	S8	S9
+chr16	88823233	88829704	GALNS.4	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	S4	S5	S10	S6	S7	S8	S9
+chr16	88813406	88823239	GALNS.5	barcode60|barcode61|barcode62|barcode63|barcode64|barcode65|barcode66	S4	S5	S10	S6	S7	S8	S9
+chr12	101785554	101790370	GNPTAB.1	barcode60|barcode61	S11	S12					
+chr12	101776952	101781683	GNPTAB.2	barcode60|barcode61	S11	S12					
+chr12	101767334	101772142	GNPTAB.3	barcode60|barcode61	S11	S12					
+chr12	101760502	101767363	GNPTAB.4	barcode60|barcode61	S11	S12					
+chr12	101757039	101760580	GNPTAB.5	barcode60|barcode61	S11	S12					
+chr12	101744458	101753762	GNPTAB.6	barcode60|barcode61	S11	S12					
+chr12	101830476	101831014	GNPTAB.7	barcode60|barcode61	S11	S12					
+chr12	101796538	101796910	GNPTAB.8	barcode60|barcode61	S11	S12					
+chr7	117503616	117509953	CFTR.1	barcode66							C1
+chr7	117530482	117536844	CFTR.2	barcode66							C1
+chr7	117536358	117542299	CFTR.3	barcode66							C1
+chr7	117542171	117549225	CFTR.4	barcode66							C1
+chr7	117587201	117594639	CFTR.5	barcode66							C1
+chr7	117594469	117603864	CFTR.6	barcode66							C1
+chr7	117603749	117612186	CFTR.7	barcode66							C1
+chr7	117611771	117619075	CFTR.8	barcode66							C1
+chr7	117664192	117670816	CFTR.9	barcode66							C1
+chr7	117479005	117486028	CFTR.10	barcode66							C1
+chr7	117638010	117644310	CFTR.11	barcode66							C1
+chr7	117559406	117559792	CFTR.12	barcode66							C1
+chr7	117627394	117627960	CFTR.13	barcode66							C1
+chr7	117642270	117642743	CFTR.14	barcode66							C1
+chr7	117652709	117653109	CFTR.15	barcode66							C1
+chr17	80101752	80107361	GAAI	barcode62|barcode63|barcode64			M1	M2	M3		
+chr17	80107005	80115251	GAAII	barcode62|barcode63|barcode64			M1	M2	M3		
+chr17	80115903	80120434	GAAIII	barcode62|barcode63|barcode64			M1	M2	M3		
+chr6	31857537	31863157	NEUI	barcode61|barcode62		N1	N2				
+chr6	32037620	32043828	CYP21A2	barcode60|barcode61|barcode62|barcode63|barcode64	S16	S17	S20	S18	S19		
+chr17	42535631	42544490	NAGLU	barcode64|barcode65					S22	S23	
+chrM	1	12279	Mito.7	barcode60|barcode62|barcode63|barcode64|barcode65	R5		R1	R2	R3	R4	
+chrM	12279	16569	Mito.9	barcode60|barcode62|barcode63|barcode64|barcode65	R5		R1	R2	R3	R4

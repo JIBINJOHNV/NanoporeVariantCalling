@@ -1,42 +1,43 @@
-Sample ID	Sample Name	Gene	Fragments	Disease
-V1	Vihan Pranay	F8	10	Hemophilia A
-V2	Vidya Vijesh	F8	10	Hemophilia A
-V3	Svojas Gautam proband	F8	10	Hemophilia A
-V4	Kamal Kishore	F8	10	Hemophilia A
-V5	Svojas mother	F8	10	Hemophilia A
-V6	Surjeet Singh	F8	10	Hemophilia A
-V7	Ayush	F8	10	Hemophilia A
-M1	CVS Of Malthi	GAA	3	Pompe
-M2	CVS of Fatima	GAA	3	Pompe
-M3	B/o Vitioan	GAA	3	Pompe
-N1	Sudeshna	Neu1	1	Sialidosis
-N2	K. Bharadwaj	Neu1	1	Sialidosis
-S1	CVS of K. Lakshmi	GBA	1	Gaucher
-S2	Sofiyan	GBA	1	Gaucher
-S3	Doli Mayuri	GBA	1	Gaucher
-S4	Venni Gudel	GALNS	5	Morquio A
-S5	Muskan B	GALNS	5	Morquio A
-S6	B/o Srinija	GALNS	5	Morquio A
-S7	Vineesha	GALNS	5	Morquio A
-S8	T. Kritvik	GALNS	5	Morquio A
-S9	Gopika Siri	GALNS	5	Morquio A
-S10	T. Raghvender	GALNS	5	Morquio A
-S11	Nirmala Oja	GNPTAB	8	ML II
-S12	Chandra Mani	GNPTAB	8	ML II
-S13	Falak Ansari	SMPD1	1	NPD
-S14	Sunil Sapkal	SMPD1	1	NPD
-S15	Priyanka Sapkal	SMPD1	1	NPD
-S16	Jyoti Dattatreya	CYP21A2	1	CH
-S17	Bhavna Nilesh	CYP21A2	1	CH
-S18	Geeta Dhananjay	CYP21A2	1	CH
-S19	Noorjahan Abdul	CYP21A2	1	CH
-S20	Babu	CYP21A2	1	CH
-S21	Chantaman Madhu	ARSA	1	MLD
-S22	Nanda Krishna	NAGLU	1	SanB
-S23	M. Harneet Sai	NAGLU	1	SanB
-C1	Patient 3	CFTR	15	Cystic Fibrosis
-R1	Thumadavan	MITO	2	
-R2	Radhamani	MITO	2	
-R3	Naveen Kumar	MITO	2	
-R4	Gopal	MITO	2	
-R5	Shashank	MITO	2
+
+ID	Name	Gene	Disease	No. of Fragments 
+V1	Sampl1	F8	Hemophilia A	10
+V2	Sampl2	F8	Hemophilia A	10
+V3	Sampl3	F8	Hemophilia A	10
+V4	Sampl4	F8	Hemophilia A	10
+V5	Sampl5	F8	Hemophilia A	10
+V6	Sampl6	F8	Hemophilia A	10
+V7	Sampl7	F8	Hemophilia A	10
+M1	Sampl8	GAA	Pompe	3
+M2	Sampl9	GAA	Pompe	3
+M3	Sampl10	GAA	Pompe	3
+N1	Sampl11	Neu1	Sialidosis	1
+N2	Sampl12	Neu1	Sialidosis	1
+S1	Sampl13	GBA	Gaucher	1
+S2	Sampl14	GBA	Gaucher	1
+S3	Sampl15	GBA	Gaucher	1
+S4	Sampl16	GALNS	Morquio A	5
+S5	Sampl17	GALNS	Morquio A	5
+S6	Sampl18	GALNS	Morquio A	5
+S7	Sampl19	GALNS	Morquio A	5
+S8	Sampl20	GALNS	Morquio A	5
+S9	Sampl21	GALNS	Morquio A	5
+S10	Sampl22	GALNS	Morquio A	5
+S11	Sampl23	GNPTAB	ML II	8
+S12	Sampl24	GNPTAB	ML II	8
+S13	Sampl25	SMPD1	NPD	1
+S14	Sampl26	SMPD1	NPD	1
+S15	Sampl27	SMPD1	NPD	1
+S16	Sampl28	CYP21A2	CH	1
+S17	Sampl29	CYP21A2	CH	1
+S18	Sampl30	CYP21A2	CH	1
+S19	Sampl31	CYP21A2	CH	1
+S20	Sampl32	CYP21A2	CH	1
+S21	Sampl33	ARSA	MLD	1
+S22	Sampl34	NAGLU	SanB	1
+S23	Sampl35	NAGLU	SanB	1
+C1	Sampl36	CFTR	Cystic Fibrosis	15
+(R1)Sample 1	Sampl37	MITO		2
+(R2)Sample 2	Sampl38	MITO		2
+(R3)Sample 3	Sampl39	MITO		2
+(R4)mitoS1	Sampl40	MITO		2
+(R5)MitoS2	Sampl41	MITO		2

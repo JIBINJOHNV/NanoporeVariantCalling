@@ -111,7 +111,7 @@ def greetings(sample_id):
 #oPENING Annotated annovar file of library where
         Annovardf=pd.DataFrame()
         for library in Library_withSample:
-                for Annovarfile in [x for x in files if library+"_filtered_Normalised_Target.hg38_" in x]:
+                for Annovarfile in [x for x in files if library in x]:
                         Annovardf=pd.read_csv(Annovarfile,sep=",")
                         try:
                                 Annovardf=Annovardf.drop([x for x in Annovardf.columns if 'Unnamed:' in x],axis=1)

@@ -1,4 +1,6 @@
 
+
+
 import pandas as pd
 import numpy as np
 import argparse
@@ -24,6 +26,8 @@ outputname="_".join(clar.split("/")[-1].split("_")[2:])[:-4]
 #long="Annovar_Output/LongShoot/Filtered/barcode60_longshot_filtered_Normalised_Target.hg38_multianno_DesiredColumns_Filtered.tsv"
 
 
+
+
 clairdf=pd.read_csv(clar,sep="\t")
 longdf=pd.read_csv(long,sep="\t")
 
@@ -37,8 +41,11 @@ if CSampleName!=LSampleName:
     print(CSampleName+" not equal to " + LSampleName)
     sys.exit()
 
-claircolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER','#CHROM','POS','ID', 'REF', 'ALT', 'INFO','FORMAT', CSampleName]
-longcolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER','#CHROM', 'POS', 'ID', 'REF', 'ALT', 'INFO','FORMAT', LSampleName]
+
+claircolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER',
+             'INFO','FORMAT', CSampleName]
+longcolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER',
+            'INFO','FORMAT', LSampleName]
 
 
 
@@ -46,27 +53,31 @@ longcolumns=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'Q
 CommonColumnsdf = pd.concat([clairdf.drop(claircolumns+['QUAL.1','FILTER.1'],axis=1),longdf.drop(longcolumns+['QUAL.1','FILTER.1'],axis=1)]).drop_duplicates()
 CommonColumnsdf.sort_values(by=['#Chr', 'Start', 'End', 'Ref', 'Alt'], inplace = True)
 CommonColumnsdf.drop_duplicates(subset=['#Chr', 'Start', 'End', 'Ref', 'Alt'], keep='first',inplace = True)
-CommonColumnsdf[['#Chr', 'Start', 'End', 'Ref', 'Alt']]=CommonColumnsdf[['#Chr', 'Start', 'End', 'Ref', 'Alt']].astype(str)
+CommonColumnsdf[['#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM','POS','ID', 'REF', 
+                'ALT']]=CommonColumnsdf[['#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM','POS','ID', 'REF', 'ALT']].astype(str)
 
 
-clairdfSpe=clairdf[claircolumns]
-longdfSpe=longdf[longcolumns]
+claircolumnsinclude=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER',
+'#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM','POS','ID', 'REF', 'ALT', 'INFO','FORMAT', CSampleName]
+longcolumnsinclude=['RefinedGenotype', 'Zygosity', 'Depth','VariantAlleleFrequency', 'QUAL', 'FILTER',
+'#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM', 'POS', 'ID', 'REF', 'ALT', 'INFO','FORMAT', LSampleName]
 
 
-clairdfSpe.columns = ['clair_' +'RefinedGenotype', 'clair_' +'Zygosity', 'clair_' +'Depth','clair_' +'VariantAlleleFrequency', 'clair_' +'QUAL', 'clair_' +'FILTER',
-                        '#CHROM','POS','ID', 'REF', 'ALT', 'clair_' +'INFO', 'clair_' +'FORMAT', 'clair_' +CSampleName]
+clairdfSpe=clairdf[claircolumnsinclude].astype(str)
+longdfSpe=longdf[longcolumnsinclude].astype(str)
 
 
-longdfSpe.columns = ['long_' +'RefinedGenotype', 'long_' +'Zygosity', 'long_' +'Depth','long_' +'VariantAlleleFrequency', 'long_' +'QUAL', 'long_' +'FILTER',
-                        '#CHROM','POS','ID', 'REF', 'ALT', 'long_' +'INFO', 'long_' +'FORMAT', 'long_' +LSampleName]
 
-clairdfSpe[clairdfSpe.columns]=clairdfSpe[clairdfSpe.columns].astype(str)
-longdfSpe[longdfSpe.columns]=longdfSpe[longdfSpe.columns].astype(str)
+clairdfSpe.columns = ['clair_' +'RefinedGenotype', 'clair_' +'Zygosity', 'clair_' +'Depth','clair_' +'VariantAlleleFrequency',
+                    'clair_' +'QUAL', 'clair_' +'FILTER','#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM','POS','ID', 'REF', 'ALT', 
+                    'clair_' +'INFO','clair_' +'FORMAT', 'clair_' +CSampleName]
 
+longdfSpe.columns = ['long_' +'RefinedGenotype', 'long_' +'Zygosity', 'long_' +'Depth','long_' +'VariantAlleleFrequency', 'long_' +'QUAL', 
+                    'long_' +'FILTER','#Chr', 'Start', 'End', 'Ref', 'Alt','#CHROM','POS','ID', 'REF', 'ALT', 
+                    'long_' +'INFO', 'long_' +'FORMAT', 'long_' +LSampleName]
 
-Spec_Clairlong=pd.merge(longdfSpe,clairdfSpe,on=['#CHROM','POS','ID', 'REF', 'ALT'],how="outer")
+Spec_Clairlong=pd.merge(longdfSpe,clairdfSpe,on=['#CHROM','POS','ID', 'REF', 'ALT','#Chr','Start', 'End', 'Ref', 'Alt'],how="outer")
 Spec_Clairlong.fillna("NA", inplace = True) 
-
 
 
 Spec_Clairlong['clair|long_RefinedGenotype'] = Spec_Clairlong[['clair_RefinedGenotype','long_RefinedGenotype']].apply(lambda x: '|'.join(x), axis = 1)
@@ -80,12 +91,15 @@ Spec_Clairlong['clair|long_FORMAT'] = Spec_Clairlong[['clair_FORMAT','long_FORMA
 Spec_Clairlong['clair|long_'+CSampleName] = Spec_Clairlong[['clair_'+CSampleName,'long_'+LSampleName]].apply(lambda x: '|'.join(x), axis = 1)
 
 
-Spec_Clairlong=Spec_Clairlong[['#CHROM','POS', 'ID', 'REF', 'ALT','clair|long_'+CSampleName,'clair|long_RefinedGenotype', 'clair|long_Zygosity', 'clair|long_Depth', 'clair|long_QUAL', 'clair|long_FILTER', 
-                                'clair|long_INFO', 'clair|long_FORMAT','clair_long_VariantAlleleFrequency']]
 
 
-Merged=pd.merge(CommonColumnsdf,Spec_Clairlong,left_on=['#Chr', 'Start', 'Ref', 'Alt'],right_on=['#CHROM','POS', 'REF', 'ALT'])
+Spec_Clairlong=Spec_Clairlong[['#CHROM', 'POS', 'ID', 'REF', 'ALT','#Chr','Start', 'End', 'Ref', 'Alt',
+'clair|long_'+CSampleName,'clair|long_RefinedGenotype','clair|long_Zygosity', 
+'clair|long_Depth', 'clair|long_QUAL', 'clair|long_FILTER', 'clair|long_INFO', 
+'clair|long_FORMAT','clair_long_VariantAlleleFrequency']]
 
+
+Merged=pd.merge(CommonColumnsdf,Spec_Clairlong,on=['#CHROM', 'POS', 'ID', 'REF', 'ALT','#Chr','Start', 'End', 'Ref', 'Alt'])
 
 Merged=Merged[['#Chr', 'Start', 'End', 'Ref', 'Alt', 'Gene.refGene', 'Func.refGene',
        'ExonicFunc.refGene', 'GeneDetail.refGene', 'AAChange.refGene',
